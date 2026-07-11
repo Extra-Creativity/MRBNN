@@ -9,6 +9,7 @@ set_target_properties(RenderLib PROPERTIES
 target_include_directories(RenderLib PRIVATE ${CMAKE_SOURCE_DIR}/external)
 
 target_compile_definitions(RenderLib PUBLIC $<$<CONFIG:Debug>:DEBUG>)
+target_compile_definitions(RenderLib PRIVATE RELA_PATH_ROOT="${CMAKE_SOURCE_DIR}")
 target_compile_options(RenderLib PUBLIC "$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:CUDA>>:-G>")
 
 target_link_libraries(RenderLib PUBLIC nlohmann_json::nlohmann_json Utils)

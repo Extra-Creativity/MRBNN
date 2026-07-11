@@ -1,3 +1,8 @@
+/*
+* For licensing see accompanying LICENSE file.
+* Copyright (C) 2026 Xiaomi Corp. All Rights Reserved.
+*/
+
 #include "tiny-cuda-nn/common.h"
 #include "tiny-cuda-nn/network.h"
 #include "tiny-cuda-nn/rtc_kernel.h"

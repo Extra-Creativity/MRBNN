@@ -1,3 +1,8 @@
+/*
+* For licensing see accompanying LICENSE file.
+* Copyright (C) 2026 Xiaomi Corp. All Rights Reserved.
+*/
+
 static constexpr uint32_t FEATURE_DIM = {FEATURE_DIM};
 static constexpr uint32_t SPLIT_OFFSET = {SPLIT_OFFSET};
 static constexpr uint32_t ALBEDO_DIM = {ALBEDO_DIM};

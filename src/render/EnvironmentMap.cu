@@ -33,7 +33,10 @@ EnvironmentMap::EnvironmentMap(const std::filesystem::path &hdriPath,
                                float exposure)
     : exposure_{ exposure }
 {
-    auto path = hdriPath.string();
+    auto path =
+        hdriPath.is_relative()
+            ? (std::filesystem::path{ RELA_PATH_ROOT } / hdriPath).string()
+            : hdriPath.string();
     int width, height, channelNum;
     if (auto buffer = stbi_loadf(path.c_str(), &width, &height, &channelNum, 0))
         image_.Reloc(buffer);

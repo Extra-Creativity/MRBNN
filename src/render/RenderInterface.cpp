@@ -139,6 +139,8 @@ RenderInterface::RenderInterface(const std::filesystem::path &workDir)
         auto volumePath = volumeInfo["path"].get_ref<std::string &>();
         auto pathPtr = reinterpret_cast<const char8_t *>(volumePath.data());
         std::filesystem::path path{ pathPtr, pathPtr + volumePath.size() };
+        if (path.is_relative())
+            path = std::filesystem::path{ RELA_PATH_ROOT } / path;
 
         std::array<int, 3> resolution = GetResolution(volumeInfo["resolution"]);
         std::size_t skipByteNum =
@@ -170,11 +172,24 @@ RenderInterface::RenderInterface(const std::filesystem::path &workDir)
         {
             std::cout << "Reading albedo grid...\n";
             auto &albedoInfo = volumeInfo["albedo"];
-            AlbedoVolume albedo{ albedoInfo["path"],
-                                 albedoInfo.value("skip_byte_num",
-                                                  std::size_t{ 0 }),
-                                 GetResolution(albedoInfo["resolution"]),
-                                 albedoInfo.value("channel_num", 3) };
+            auto albedoPathStr = albedoInfo["path"].get_ref<std::string &>();
+            auto albedoPathPtr =
+                reinterpret_cast<const char8_t *>(albedoPathStr.data());
+            std::filesystem::path albedoPath{
+                albedoPathPtr, albedoPathPtr + albedoPathStr.size()
+            };
+
+            if (albedoPath.is_relative())
+            {
+                albedoPath =
+                    std::filesystem::path{ RELA_PATH_ROOT } / albedoPath;
+            }
+
+            AlbedoVolume albedo{
+                albedoPath, albedoInfo.value("skip_byte_num", std::size_t{ 0 }),
+                GetResolution(albedoInfo["resolution"]),
+                albedoInfo.value("channel_num", 3)
+            };
             volume_ = GPUSimpleVolume{ path,  skipByteNum, resolution,
                                        bound, mipmapLevel, std::move(albedo) };
         }
@@ -549,6 +564,14 @@ void RenderInterfaceWithTCNN::EquipEnvBaking(
         return;
     }
 
-    baking = EnvironmentBaking{ *workDir };
+    if (workDir->is_relative())
+    {
+        baking = EnvironmentBaking{ std::filesystem::path{ RELA_PATH_ROOT } /
+                                    *workDir };
+    }
+    else
+    {
+        baking = EnvironmentBaking{ *workDir };
+    }
     return;
 }

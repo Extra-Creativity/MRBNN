@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <filesystem>
 #include <fstream>
+#include <iostream>
 
 using FloatType = half;
 
@@ -54,11 +55,15 @@ __global__ void GetEncodingGradient(EncodingGPUProxy<FloatType> encoding,
     }
 }
 
-int main()
+int main(int argc, const char *argv[])
 {
-    std::filesystem::path rootPath{
-        R"(D:\Work\Graphics\Volume Rendering\Tests\NeuVolEvalCUDA-v2\data\cloud-1840-render)"
-    };
+    if (argc != 2)
+    {
+        std::cerr << "Usage: ViewAdjustment CONFIG_ROOT_DIR";
+        return 0;
+    }
+
+    std::filesystem::path rootPath{ /* SPECIFY PATH */ };
     std::ifstream fin{ rootPath / "config.json" };
     auto config = nlohmann::json::parse(fin);
 

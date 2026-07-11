@@ -1,3 +1,8 @@
+/*
+* For licensing see accompanying LICENSE file.
+* Copyright (C) 2026 Xiaomi Corp. All Rights Reserved.
+*/
+
 #include <cstddef>
 
 #define WARP_SIZE 32
