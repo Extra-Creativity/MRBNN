@@ -1,9 +1,10 @@
 # MRBNN
 <p align="center">
   <a href="https://extra-creativity.github.io/projects/MRBNN"><b>🔗Project Page</b></a> |
-  <a href=""><b>📄 Paper </b></a> |
-  <a href=""><b>📄 Supplementary </b></a>
+  <a href="https://extra-creativity.github.io/assets/pdf/MRBNN/paper.pdf"><b>📄 Paper </b></a> |
+  <a href="https://extra-creativity.github.io/assets/pdf/MRBNN/supplementary.pdf"><b>📄 Supplementary </b></a>
 </p>
+
 
 ![](./assets/teaser.jpg)
 
@@ -11,7 +12,9 @@
 
 This repository contains the neural volumetric renderer used by SIGGRAPH 2026 Paper *Multi-feature Radiance Baking Neural Networks for Instant Volumetric Rendering*. By our neural baking and decoder design, it can render complex volumes with high-quality multi-scattering effects in real time. See our paper for details!
 
-![](./assets/example.gif)
+<p align="center">
+    <img src="./assets/example.gif" />
+</p>
 
 > Note: For the company policy, the training code and dataset are not released and this repository has the license that ONLY allows for non-commercial uses. See the LINCESE for details. 
 
@@ -54,7 +57,9 @@ We provide three sample baking data in `data/` to cover typical cases in our pap
 
 Click "Select working directory", and select one of the data folder mentioned above, then you can see our sample scene!
 
-![](./assets/example.png)
+<p align="center">
+	<img src="./assets/example.png" style="max-width:50%;" />
+</p>
 
 Their parameters are already properly specified, but we still list some details in option panel:
 
