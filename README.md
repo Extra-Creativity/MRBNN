@@ -58,7 +58,7 @@ We provide three sample baking data in `data/` to cover typical cases in our pap
 Click "Select working directory", and select one of the data folder mentioned above, then you can see our sample scene!
 
 <p align="center">
-	<img src="./assets/example.png" style="max-width:50%;" />
+	<img src="./assets/example.png" width="50%" />
 </p>
 
 Their parameters are already properly specified, but we still list some details in option panel:
