@@ -16,7 +16,7 @@ This repository contains the neural volumetric renderer used by SIGGRAPH 2026 Pa
     <img src="./assets/example.gif" />
 </p>
 
-> Note: For the company policy, the training code and dataset are not released and this repository has the license that ONLY allows for non-commercial uses. See the LINCESE for details. 
+> Note: For the company policy, the training code and dataset are not released and this repository has the license that ONLY allows for non-commercial uses. See the LICENSE for details. 
 
 ## Setup
 
@@ -32,7 +32,7 @@ Also, though all dependency libraries are cross-platform (except that GUI to ope
 
 ### Build
 
-You can open the folder with your IDE to do automatic configuration and build (**in Release mode** to get fully optimized executable). If you want to do so manually, run commands below:
+You can open the folder with your IDE to do automatic configuration and build (**in Release mode** to get fully optimized executable file). If you want to do so manually, run commands below:
 ```bash
 mkdir build
 # Configure the project.
