@@ -73,7 +73,21 @@ Their parameters are already properly specified, but we still list some details 
 ## BibTex
 
 ```tex
-Coming soon...
+@inproceedings{10.1145/3799902.3811179,
+author = {Liang, Jiaming and Yuan, Hongliang and Gai, Meng and Wang, Guoping and Li, Sheng},
+title = {Multi-feature Radiance Baking Neural Networks for Instant Volumetric Rendering},
+year = {2026},
+isbn = {9798400725548},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3799902.3811179},
+doi = {10.1145/3799902.3811179},
+booktitle = {Proceedings of the Special Interest Group on Computer Graphics and Interactive Techniques Conference Conference Papers},
+articleno = {134},
+numpages = {11},
+keywords = {Neural rendering, Volume rendering, Participating media, Real-time rendering},
+series = {SIGGRAPH Conference Papers '26}
+}
 ```
 
 ## FAQ
